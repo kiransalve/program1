@@ -1,0 +1,17 @@
+<body>
+  <ul class="items">
+    <li class="item">Item 1</li>
+    <li class="item">Item 2</li>
+    <li class="item">Item 3</li>
+  </ul>
+</body>
+
+<script>
+  const ultag = document.querySelector(".items");
+  const firstUL = ultag.children[0];
+  firstUL.innerText = "Hello";
+  firstUL.style.color = "green";
+
+  const secondUL = ultag.children[1];
+  secondUL.style.color = "yellow";
+</script>

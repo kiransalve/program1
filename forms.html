@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <h1>Book a Call</h1>
+    <h3>
+      Book a call slot and our representative will call you within 1 hour of
+      selected time
+    </h3>
+    <hr />
+    <form action="#" onsubmit="onsignup(event)">
+      <label for="name">Name : </label><br /><br />
+      <input type="text" name="name" id="name" required /><br /><br />
+      <label for="email">Email : </label><br /><br />
+      <input type="email" name="email" id="email" required /><br /><br />
+      <label for="phone">Phone : </label><br /><br />
+      <input type="number" name="phone" id="phone" required /><br /><br />
+      <label for="timeforcall">Time for Call : </label><br /><br />
+      <input type="date" name="date" id="date" required />
+      <input type="time" name="time" id="time" required /><br /><br />
+      <button>Get A Call</button>
+    </form>
+
+    <script>
+        // function to print user data
+      function onsignup(event) {
+        event.preventDefault();
+        let user_name = event.target.name.value;
+        let email_id = event.target.email.value;
+        let phone_num = event.target.phone.value;
+        let date = event.target.date.value;
+        let time = event.target.time.value;
+
+        console.log(user_name, email_id, phone_num, date, time);
+      }
+    </script>
+  </body>
+</html>

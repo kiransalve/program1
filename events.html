@@ -1,0 +1,31 @@
+<body>
+  <form action="#" class="myForm">
+    <label for="name">Name</label>
+    <input type="text" class="name" />
+    <label for="email">Email</label>
+    <input type="email" name="email" class="email" id="email" />
+    <button class="btn" type="submit">Submit</button>
+  </form>
+</body>
+<script>
+  const myForm = document.querySelector(".myForm");
+  const name = document.querySelector(".name");
+  const email = document.querySelector(".email");
+
+  myForm.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (name.value === "" || email.value === "") {
+      alert("Please enter the value");
+    } else {
+      console.log(name.value, " : ", email.value);
+    }
+  });
+  myForm.addEventListener("mouseover", (e) => {
+    e.preventDefault();
+    myForm.style.color = "red";
+  });
+  myForm.addEventListener("mouseout", (e) => {
+    e.preventDefault();
+    let btn = (document.querySelector(".btn").style.background = "yellow");
+  });
+</script>
