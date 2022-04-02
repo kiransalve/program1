@@ -1,20 +1,25 @@
 let num = 10;
 
 const isPrime = (num) => {
-  let isPrimeNum;
+  let i; // divider
+  let x = 2; //the number we will check
+  let arr = [];
 
-  for (let i = 2; i <= num; i++) {
-    isPrimeNum = 1;
-    for (let j = 2; j <= i / 2; j++) {
-      if (i % j == 0) {
-        isPrimeNum = 0;
-        break;
+  let isPrimeNum = num;
+
+  while (isPrimeNum > 0) {
+    for (i = 2; i <= x / 2; i++) {
+      if (x % i == 0) {
+        break; // full dividation happen
       }
     }
-    if (isPrimeNum == 1) {
-      console.log(i);
+    if (i > x / 2) {
+      arr.push(x);
+      isPrimeNum--;
     }
+    x++;
   }
+  return arr;
 };
 
-isPrime(num);
+console.log(isPrime(num));
