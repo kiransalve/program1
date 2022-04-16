@@ -33,6 +33,7 @@
           <li class="list-group-item">Item 2</li>
           <li class="list-group-item">Item 3</li>
           <li class="list-group-item">Item 4</li>
+          <li>Item 5</li>
         </ul>
       </div>
     </div>
@@ -46,6 +47,9 @@
       // Make the 3 rd element in the list have green background color
       let thirdItem = items[2];
       thirdItem.style.backgroundColor = "green";
+
+      // Add a new li element without the same class Name
+      let li = document.getElementsByTagName("li");
     </script>
   </body>
 </html>
