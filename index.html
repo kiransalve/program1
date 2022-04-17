@@ -33,23 +33,45 @@
           <li class="list-group-item">Item 2</li>
           <li class="list-group-item">Item 3</li>
           <li class="list-group-item">Item 4</li>
-          <li>Item 5</li>
+          <!-- <li>Item 5</li> -->
         </ul>
       </div>
     </div>
     <script>
       // Make all the elements in the list have bold color font
-      let items = document.getElementsByClassName("list-group-item");
-      for (let i = 0; i < items.length; i++) {
-        items[i].style.fontWeight = "bold";
-      }
+      //   let items = document.getElementsByClassName("list-group-item");
+      //   for (let i = 0; i < items.length; i++) {
+      //     items[i].style.fontWeight = "bold";
+      //   }
 
       // Make the 3 rd element in the list have green background color
-      let thirdItem = items[2];
-      thirdItem.style.backgroundColor = "green";
+      //let thirdItem = items[2];
+      //thirdItem.style.backgroundColor = "green";
 
       // Add a new li element without the same class Name
-      let li = document.getElementsByTagName("li");
+      // let li = document.getElementsByTagName("li");
+
+      // Make the 2nd item have green background color
+      //   let second_item = document.querySelector(".list-group-item:nth-child(2)");
+      //   second_item.style.backgroundColor = "green";
+
+      //   // Make the 3rd item invisible
+      //   let third_item = document.querySelector(".list-group-item:nth-child(3)");
+      //   third_item.style.display = "none";
+
+      // Using QuerySelectorALL change the font color to green for 2nd item in the item list
+      let allItems = document.querySelectorAll(".list-group-item");
+      //allItems[1].style.backgroundColor = "green"
+
+      // Choose all the odd elements and make their background green using QuerySelectorALL
+      let odd = document.querySelectorAll(".list-group-item:nth-child(odd)");
+      for (let i = 0; i < odd.length; i++) {
+        odd[i].style.backgroundColor = "green";
+      }
+      // What is the difference between queryselector and queryselectorall?
+      // >> queryselector returns single object with first HTML element of given
+      //    selector, queryselectorall returns array of objects with all the HTML element
+      //    that matches with given selector.
     </script>
   </body>
 </html>
