@@ -22,9 +22,16 @@ function onsubmit(e) {
 
     let obj_serialized = JSON.stringify(myObj);
 
-    localStorage.setItem("myObj", obj_serialized);
-    let deserialized = JSON.parse(localStorage.getItem("myObj"));
+    localStorage.setItem(myObj.email, obj_serialized);
 
-    console.log(deserialized);
+    showUser(myObj);
+    // let deserialized = JSON.parse(localStorage.getItem("myObj"));
+    // console.log(deserialized);
+  }
+  function showUser(user) {
+    const parentNode = document.getElementById("users");
+    const childElm = `<li> ${user.name} - ${user.email}`;
+    parentNode.innerHTML = parentNode.innerHTML + childElm;
+    
   }
 }
