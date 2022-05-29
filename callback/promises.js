@@ -36,11 +36,20 @@ function deletePost() {
     }
   });
 }
-createPost({ title: "Post three", body: "this is post three" })
-  .then(() => {
-    getPost();
-    deletePost().then(() => {
-      getPost();
-    });
-  })
-  .catch((err) => console.log(err));
+// createPost({ title: "Post three", body: "this is post three" })
+//   .then(() => {
+//     getPost();
+//     deletePost().then(() => {
+//       getPost();
+//     });
+//   })
+//   .catch((err) => console.log(err));
+
+
+const p1 = Promise.resolve("hello world")
+const p2 = 10;
+const p3 = new Promise((resolve, reject) => {
+  setTimeout(resolve,2000,"Goodbye")
+})
+
+Promise.all([p1,p2,p3]).then(values => console.log(values);)
