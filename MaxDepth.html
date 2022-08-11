@@ -1,0 +1,50 @@
+<script>
+    // Javascript program to find Height of Tree
+
+    // binary tree node 
+    class Node {
+        constructor(item) {
+            this.data = item;
+            this.right = null;
+            this.left = null;
+        }
+    }
+
+    let root;
+
+    /* Compute the "maxDepth" of a tree -- the number of
+       nodes along the longest path from the root node
+       down to the farthest leaf node.*/
+
+    function maxDepth(node) {
+        if (node == null) {
+            return -1;
+        }
+        else {
+            /* compute the depth of each subtree */
+            let ldepth = maxDepth(node.left)
+            let rdepth = maxDepth(node.right)
+
+            // use larger 
+            if (ldepth > rdepth) {
+                return (ldepth + 1)
+            }
+            else {
+                return (rdepth + 1)
+            }
+        }
+    }
+
+    // driver program to test function
+    root = new Node(1)
+    root.left = new Node(2)
+    root.right = new Node(3)
+    root.left.left = new Node(4)
+    root.left.left.right = new Node(8)
+    root.left.left.right.left = new Node(18)
+    root.right.right = new Node(5)
+    root.right.right.right = new Node(9)
+
+
+    document.write("Height of tree is : " + maxDepth(root));
+</script>
